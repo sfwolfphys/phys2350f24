@@ -1,0 +1,99 @@
+---
+title: "Position, Velocity, and Acceleration"
+author: "Dr. Wolf"
+date: "8/23/2024"
+format:
+  pdf:
+    toc: false
+    number-sections: true
+    colorlinks: true
+---
+
+## Zooming in on a position vs. time graph
+Suppose an object's motion is described by the following position function:
+
+$$
+x(t) = t^2 - 6t + 10
+$$
+
+1. Using a computer,[^1] plot this motion between $t=0$ s and $t=6$ s. Does this object move with nearly constant velocity or with definitely varying velocity? Explain how you can tell. 
+
+[^1]: Use any computational tool that you choose and are comfortable with. If you don't have a computational tool you are comfortable with, then open Excel on your laptop and look at this page for making scatter plots: [https://www.excel-easy.com/examples/scatter-plot.html](https://www.excel-easy.com/examples/scatter-plot.html). 
+
+2. Now plot this motion between $t=1.5$ s and $t=2.5$ s. (This should not take long. If you are struggling ***ask for help***.) Does this object move with nearly constant velocity or with definitely varying velocity? Explain how you can tell. 
+
+3. Now plot this motion between $t=1.95$ s and $t=2.05$ s. Does this object move with nearly constant velocity or with definitely varying velocity? Explain how you can tell. 
+
+4. All three graphs are representations of the same motion
+    1. How can you account fo the last graph being so much straighter than the first?
+    2. Can you tell from a very small time interval on a graph whether the motion over the whole graph has constant velocity?
+    3. Find your average velocity over the small time interval from part 3 above. Show your work
+    4. Add a line with slope equal to this average velocity to your plot from part 1 that goes through the point $(2,2)$. What does this line remind you of from your Calculus I class?  How do you think that the slope of this line compares to the instantaneous velocity at $t=2$ s. Recall the definition of instantaneous velocity:
+  
+$$
+v = \frac{dx}{dt}
+$$
+    
+## Predicting future position
+Suppose that you know two things about an object:
+
+1. Current location $(x_i)$
+2. Current velocity $(v_i)$
+
+Given what we know about velocity:
+$$
+v = \frac{dx}{dt} \quad\text{and}\quad \bar{v} = \frac{\Delta x}{\Delta t} = \frac{x_f - x_i}{\Delta t}
+$$
+As well as the fact that when $\Delta t$ is small enough,
+$$
+v \approx \bar{v}
+$$
+Write an algebraic expression predicting the future position $(x_f)$ some time $\delta t$ after the initial time.
+$$
+x_f = 
+$$
+
+## Defining acceleration
+Acceleration is defined as the time derivative of velocity:
+$$
+a = \frac{dv}{dt}
+$$
+Given what we know about the position, and average velocity, write an algebraic expression for the average acceleration
+$$
+\bar{a} = 
+$$
+
+Suppose that you know two things about an object:
+
+1. Current velocity $(v_i)$
+2. Current acceleration $(a_i)$
+
+Is it reasonable to predict that the velocity a short time $\delta t$ later can be written as the following? Why or why not?
+$$
+v_f = v_i + a_i \delta t
+$$
+
+## Motion of an accelerating object
+Suppose you have an object moving in 1D with an acceleration given by the following function of time:
+$$
+a(t) = \left(1\frac{\text{m}}{\text{s}^2}\right) e^{-t}
+$$
+You also know that at $t=0$ the position is $x_i=0$ m and the velocity is $v_i=0 \frac{\text{m}}{\text{s}}$. We want to know where, and how fast, the object is moving at $t=5$ s.
+
+1. Carry out the following procedure to make this prediction. You can start by working with paper and pencil, but you will want to transition this calculation to code.
+    a. Numerically predict the velocity and position at $t=1$ s.
+    b. Given your previous prediction, now predict the velocity and position at $t=2$ s.
+    c. Given your previous prediction, now predict the velocity and position at $t=3$ s.
+    d. Given your previous prediction, now predict the velocity and position at $t=4$ s.
+    e. Given your previous prediction, now predict the velocity and position at $t=5$ s.
+2. Do you think that this is accurate? Why or why not?
+3. Make a plan for making this calculation more accurate, then carry it out.
+4. Finally make the following plots from $t=0$ s to $t=5$ s.
+    - $x(t)$ vs. $t$
+    - $v(t)$ vs. $t$
+    - $a(t)$ vs. $t$
+5. ***Interpret this motion*** what is happening to the acceleration as $t\rightarrow\infty$? Do your velocity vs. time and position vs. time graphs show behavior that agrees with this observation about the acceleration?
+    
+Include your code and the figures that you generate as a part of your submission.
+    
+    

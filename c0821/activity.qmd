@@ -1,0 +1,36 @@
+---
+title: "Introducing velocity"
+author: "Dr. Wolf"
+date: "8/21/2024"
+format:
+  pdf:
+    toc: false
+    number-sections: true
+    colorlinks: true
+---
+
+## Average velocity
+
+The position vs. time graph below represents the motion of an object moving in a straight line.
+
+![](problem1.png){width=3in}
+
+1. Describe the motion. During which time interval(s), if any, is the velocity constant? Explain how you can tell.
+2. Find the object's instantaneous velocity at each of the following times. Show your work.
+    1. $t=0.5$ s
+    2. $t=2.0$ s
+    3. $t=4.0$ s
+3. For each of the following intervals, find the average velocity of the object. *Hint: for average velocity, we only care about the position/time of the endpoints of the interval.*
+
+    1. Between A and C
+    2. Between A and D
+    3. Between B and D
+    
+Sketch this graph on your own, and add lines that would correspond to an object moving with constant velocity between each of the pairs of points noted above. For each line that you drew, how does the slope compare to the average velocity that you computed above?
+
+4. In which of the cases from part 3, if any, is the average velocity over an interval equal to the average of the constant velocities occuring in that interval? For example, is the following expression ***always*** correct for any interval choice? If not, when is it true?
+
+$$
+\bar{v}_{AC} = \frac{1}{2}\left(\bar{v}_{AB} + \bar{v}_{BC}\right)
+$$
+
