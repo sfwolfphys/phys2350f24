@@ -1,0 +1,127 @@
+---
+title: "Numerically calculating Position, Velocity, and Acceleration"
+author: "Dr. Wolf"
+date: "8/26/2024"
+date-format: "long"
+format:
+  pdf:
+    toc: false
+    number-sections: true
+    number-depth: 1
+    colorlinks: true
+---
+
+# Euler's method for determining position and velocity given acceleration
+
+Givens numerical values for:
+- An initial time: $t_0$ (usually, we pick 0 sec)
+- An initial position: $x_0$ (Depends on the problem, will *always* be given)
+- An initial velocity: $v_0$ (Depends on the problem, will *always* be given)
+- A known acceleration function $a(t)$ (Depends on the problem, will be given for now)
+
+In general, our goal is to make a table full of numbers that allows you to fill in the table below:
+
+|$t$     |$x$     |$v$     |$a$       |
+|--------|--------|--------|----------|
+|$t_0$   |$x_0$   |$v_0$   |$a_0$     |
+|$t_1$   |$x_1$   |$v_1$   |$a_1$     |
+|$t_2$   |$x_2$   |$v_2$   |$a_2$     |
+|$t_3$   |$x_3$   |$v_3$   |$a_3$     |
+|$t_4$   |$x_4$   |$v_4$   |$a_4$     |
+|...     |...     |...     |...       |
+
+## Step 1: Choose an appropriate time step $\delta t$
+Literally, just pick a numerical value (at least to start out).
+
+## Step 2: Fill in the first line of the table above.  
+You'll need to plug the initial time into your acceleration function to get the initial acceleration.
+$$
+a(t_0) = a_0
+$$
+
+## Step 3: Calculate the *future* time, position, velocity, and acceleration:
+
+$$
+\begin{aligned}
+t_1 &= \\[0.25in]
+x_1 &= \\[0.25in]
+v_1 &= \\[0.25in]
+a_1 &= 
+\end{aligned}
+$$
+
+## Step 4: Repeat step 3 until you are done
+Usually, you are looking for a certain final time, or are given a condition when you should stop calculating.
+
+In general, you calculate the next element based off of the previous elements
+$$
+\begin{aligned}
+t_{j+1} &= \\[0.25in]
+x_{j+1} &= \\[0.25in]
+v_{j+1} &= \\[0.25in]
+a_{j+1} &= \\[0.25in]
+\end{aligned}
+$$
+This lets you determine the next row of your table based on the previous row of the table.
+
+# Motion of an accelerating object
+Suppose you have an object moving in 1D with an acceleration given by the following function of time:
+$$
+a(t) = \left(1\frac{\text{m}}{\text{s}^2}\right) e^{-t}
+$$
+You also know that at $t=0$ the position is $x_i=0$ m and the velocity is $v_i=0 \frac{\text{m}}{\text{s}}$. We want to know where, and how fast, the object is moving at $t=5$ s.
+
+1. Carry out the following procedure to make this prediction. You can start by working with paper and pencil, but you will want to transition this calculation to code.
+    a. Numerically predict the velocity and position at $t=1$ s.
+    b. Given your previous prediction, now predict the velocity and position at $t=2$ s.
+    c. Given your previous prediction, now predict the velocity and position at $t=3$ s.
+    d. Given your previous prediction, now predict the velocity and position at $t=4$ s.
+    e. Given your previous prediction, now predict the velocity and position at $t=5$ s.
+2. Do you think that this is accurate? Why or why not?
+3. Make a plan for making this calculation more accurate, then carry it out.
+4. Finally make the following plots from $t=0$ s to $t=5$ s using a step size that is appropriate given the class presentation.
+    - $x(t)$ vs. $t$
+    - $v(t)$ vs. $t$
+    - $a(t)$ vs. $t$
+5. ***Interpret this motion*** what is happening to the acceleration as $t\rightarrow\infty$? Do your velocity vs. time and position vs. time graphs show behavior that agrees with this observation about the acceleration?
+    
+Include your code and the figures that you generate as a part of your submission.
+  
+{{< pagebreak >}}
+
+# Appendix: The analytic method for solving this problem:
+$$
+a(t) = \frac{dv}{dt} = e^{-t} \quad v(0)=0 \quad x(0)=0
+$$
+
+## Step 1: Integrate the acceleration to get the velocity
+<br><br><br><br><br><br><br>
+
+## Step 2: Apply the condition $v(t=0)=0$
+<br><br><br><br><br><br><br>
+
+## Step 3: Integrate the velocity to find the position
+<br><br><br><br><br><br><br>
+
+## Step 4: Apply the condition $x(t=0)=0$
+<br><br><br><br><br><br><br>
+
+## Differential Equations lingo
+I don't want you to focus on learning this for this class, but I am attempting to put what you are learning here in a context that will be useful for future coursework so that when it comes up again, it hopefully looks/feels a little familiar.
+
+The equation
+$$
+a(t) = e^{-t}
+$$
+can be framed in one of two ways.
+
+1. A 2nd order differential equation (second order because it has a 2nd derivative in it):
+$$
+\frac{d^2x}{dt^2} = e^{-t}
+$$
+2. Two, 1st order differential equations:
+$$
+\frac{dv}{dt} = e^{-t} \quad \frac{dx}{dt} = v(t)
+$$
+
+Either way, the system has a *generalized solution* (that is, one where we don't have any initial values or *boundary conditions*). If we want to have a *specific solution*, we need to know the value of the functions $x(t)$ and $v(t)$ for some time value. (It need not be zero, like we had in this example).
