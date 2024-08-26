@@ -1,0 +1,40 @@
+---
+title: "Acceleration in 1D"
+author: "Dr. Wolf"
+date: "8/28/2024"
+date-format: "long"
+format:
+  pdf:
+    toc: false
+    number-sections: true
+    number-depth: 1
+    colorlinks: true
+---
+
+# Graphing constant acceleration motion
+Sketch $x$ vs. $t$, $v$ vs. $t$, and $a$ vs. $t$ graphs for the entire motion of a ball rolling up and then down an incline
+
+1. Use a coordinate system in which the positive x-direction is *down* the track. Indicate where you have placed the origin of your coordinate system.
+
+![](kinGraphs.png){width=5in}
+
+2. Use a coordinate system in which the positive x-direction is *up* the track. Indicate where you have placed the origin of your coordinate system.
+
+![](kinGraphs.png){width=5in}
+
+3. Can an object have a negative acceleration while speeding up? Explain.
+
+{{< pagebreak >}}
+
+# Slowing down and gaining?
+Two cars, C and D, travel in the same direction on a long, straigh section of highway. During a particular time interval $\Delta t_0$, car D is ahead of car C and is speeding up while car C is slowing down.
+
+During the interval $\Delta t_0$, it is observed that car C *gains* on car D (*i.e.*, the distance between the cars decreases). Explain how this is possbile, and give a specific example of such a case using both words and describing that situation graphically. (Use a different color pen for each car's set of graphs)
+
+![](kgPos.png){width=4in}
+
+# On the precipice
+
+You have been stranded on an unknown planet that has an Oxygen-Nitrogen atmosphere with a pressure that is equal to atmospheric pressure back on earth.[^1] Previously, you have done an experiment and found that the acceleration due to gravity is $g=7.2 \frac{\text{m}}{\text{s}^2}$. You have come to a sheer cliff and want to repel down the cliff. You have all of the proper equipment, but only 100 feet of rope. You find a stone on the ground nearby and drop it off of the cliff, starting your stopwatch when you do so. When you hear the rock hit the ground below, you stop the watch and find a time of $\Delta t=3.05$ s. Do you have enough rope to repel down the cliff?
+
+[^1]: This is relevant information. If you aren't sure why, ask an instructor.

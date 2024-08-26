@@ -1,0 +1,37 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usepgfmodule{decorations}% This is enough. But any decoration library works
+
+\begin{document}
+
+\begin{tikzpicture}
+    \makeatletter
+    \path plot[smooth] coordinates {(2,2) (1,3) (4,7) (-2,9)}
+        \pgfextra{
+            The easiest way to smuggle the current softpath
+            \pgfsyssoftpath@getcurrentpath\student@softpath
+            \global\let\student@softpath = \student@softpath
+        }
+    ;
+    You can backup the soft path if you want to
+    \let\teacher@softpath = \student@softpath
+    
+    Compute the Length
+    \pgf@decorate@parsesoftpath\student@softpath\dummy@token@to@hold@parsed@path
+    \message{^^J^^J Public Service Announcement ^^J^^J}
+    \message{^^J^^J arc length \pgf@decorate@totalpathlength pt ^^J^^J}
+    \node[align=center]{arc length\\\pgf@decorate@totalpathlength pt};
+    
+    Reuse the path
+    (student copy is destroyed by parsing, must use teacher copy)
+    \pgfsyssoftpath@setcurrentpath\teacher@softpath
+    \pgfsyssoftpath@flushcurrentpath
+    \pgfsys@stroke
+    
+    Put the softpath back like nothing happens
+    \draw[red,thick,dotted]\pgfextra{\pgfsyssoftpath@setcurrentpath\teacher@softpath};
+    
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,17 @@
+\documentclass[preview,convert={outext=.png}]{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+\begin{tikzpicture}[>=stealth]
+  \huge
+  \coordinate (O) at (0,0);
+  \foreach \q in {x,v,a}{
+    \coordinate (Q) at ($(O) + (0,-4)$);
+    \draw[<->] (Q) -- +(0,8) node[left]{$\q$};
+    \draw[->] (O) -- +(8,0) node[below right]{$t$};
+    \coordinate (O) at ($(O) + (10,0)$);
+  }  
+\end{tikzpicture}
+\end{document}

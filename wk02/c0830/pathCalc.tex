@@ -1,0 +1,41 @@
+\documentclass{standalone}
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{shapes}
+\usetikzlibrary{decorations.markings}
+
+\tikzset{>=stealth,
+  coord/.style = {circle,fill=black,draw=black,minimum size=0.1cm,inner sep=0pt},
+  tangent/.style={decoration={markings, mark=at position #1
+      with{
+        \coordinate (tangent point-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number})
+                                     at (0pt,0pt);
+        \coordinate (tangent unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (1,0pt);
+        \coordinate (tangent orthogonal unit vector-\pgfkeysvalueof{/pgf/decoration/mark info/sequence number}) at (0pt,1);
+      }
+    },
+    postaction=decorate
+  },
+  use tangent/.style={shift=(tangent point-#1), x=(tangent unit vector-#1),
+    y=(tangent orthogonal unit vector-#1)},
+  use tangent/.default=1
+}
+
+\begin{document}
+
+\begin{tikzpicture}
+    \coordinate [label=left:$O$](O) at (0,0);
+    \coordinate [label=$C$] (C) at (3.7,2);
+    \draw[tangent = 0.25, tangent = 0] (C) ellipse (4 and 1.5);
+    \node[use tangent, coord] (A) at (0,0) {};
+    \node [above] at (A.north) {A};
+    \node[use tangent=2, coord] (B) at (0,0) {};
+    \node [right] at (B.east) {B};
+
+    % \node [draw=blue, ellipse, minimum height=3cm, minimum width=8cm, inner sep=0] (e) at (C) 
+
+
+\end{tikzpicture}
+
+\end{document}
