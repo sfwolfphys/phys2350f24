@@ -1,0 +1,141 @@
+\documentclass{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage[margin=0.75in]{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{color}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{tcolorbox}
+\usepackage{arydshln}
+\usepackage{pifont}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\rhead{PHYS 2350 \\ Fall 2016}
+\chead{Kenyan Pirates \textrm{I}}
+\lhead{Name:}
+\lfoot{}
+\rfoot{}
+\cfoot{}
+
+\title{Brief Article}
+\author{The Author}
+%\date{}							% Activate to display a given date or no date
+
+\setlength{\parindent}{0pt}
+
+\begin{document}
+% \maketitle
+% \section{}
+% \subsection{}
+
+\begin{tcolorbox}[colback=black!5!white,colframe=white!15!black,title=Activity Goals]
+  By the end of this activity, you should be able to \ldots
+  \begin{enumerate}[nosep]
+    \item Describe the motion of objects moving in the same direction as a constant applied force.
+    \item Describe the motion of objects moving under the influence of a constant applied
+    force.
+    \item Interpret data related to the motion of falling objects.
+  \end{enumerate}
+\end{tcolorbox}
+
+\section*{Kenyan Pirates \textrm{I}}
+\subsection*{Alternate title: You mean, Pirates were the bad guys?!?!?}
+\begin{tcolorbox}[colback=black!5!white,colframe=white!15!black,title=Problem Context]
+  While on a vacation to Kenya, you visit the port city of Mombassa on the Indian Ocean. On the
+  coast, you find an old Portuguese fort probably built in the 16\textsuperscript{th}
+  century. Large stone walls rise vertically from the shore to protect the fort from cannon
+  fire from pirate ships.  You wonder how close a pirate ship would have to sail to the fort to
+  be in range of the fort's cannon. Of course you realize that the range depends on the
+  velocity that the cannonball leaves the cannon.
+\end{tcolorbox}
+
+
+\begin{minipage}{0.6\textwidth}
+  \subsection*{Your mission}
+  \begin{itemize}
+    \item Measure the height of the cliff.
+    \item Determine the muzzle velocity for the cannon.
+  \end{itemize}
+  This mission will continue later this week\ldots\\
+
+  There is also an observation post with a view of the fort looking out to the ocean shown
+  at the right
+\end{minipage}
+\hfill
+\begin{minipage}{0.35\textwidth}
+  \begin{center}
+    \def\svgwidth{\textwidth} \input{fortShore.pdf_tex}
+  \end{center}
+\end{minipage}
+
+\begin{enumerate}
+  \item If you were to drop a rock out of the gun hole, write an algebraic expression relating
+  the height of the cliff $H$ to the time it would take for the rock to hit the water
+  $t_{\text{rock}}$, and any constants you might need (e.g., $g$, $\pi$, or regular
+  numbers). \vspace{0.75in} 
+  \item If you fired the cannon horizontally, how would the time it takes the cannonball to hit
+  the water $t_{\text{ball}}$ compare to $t_{\text{rock}}$?  Explain. \vspace{0.5in}
+  \item If you fired the cannon horizontally, write an algebraic expression for the horizontal
+  distance traveled $D$ in terms of the time in air $t_{\text{ball}}$ and the (unknown) muzzle
+  velocity $\left|\vec{v}_0\right| = v_0$.
+\end{enumerate}
+
+\vfill
+{\Large \ding{237} Check your answers with an instructor before continuing!}
+
+\newpage
+
+
+
+% \def\svgwidth{\textwidth} \input{plates.pdf_tex}
+
+% \begin{tcolorbox}[colback=black!5!white,colframe=white!15!black,title=Title text]
+%   Blah Blah...  \tcblower Blah Blah...
+% \end{tcolorbox}
+
+
+\begin{tcolorbox}[colback=black!5!white,colframe=white!15!black,title=Data Gathered]
+  Leaning out of one of these gun holes, you drop a rock which hits the ocean 3.0 seconds
+  later. (Repeating this action multiple times, you reproduce the same time within 0.2 seconds,
+  a typical human reaction time.)
+
+  At your disposal, the Kenyan Navy has provided you with a generous supply of both standard
+  charges to fire a cannonball, and cannonballs, each a standard mass of 4 kg.  You have also
+  set up an observation post on the water, which will allow you to observe the splash and
+  measure the distances $D$ and $H$ indicated above using still photographs of the splash.  You
+  decide to fire the cannon horizontally 5 times and collect distance measurement data.  Since
+  you only have photographs, all distance measurements are in \textit{pixels} and displayed in
+  the table below.
+  \begin{center}
+    \begin{tabular}{l|rrrrr}
+      Trial \# &1 &2 &3 &4 &5 \\
+      \hline
+      $H$(px) &220 &223 &222 &222 &225 \\
+      $D$(px) &1122 &1138 &1133 &1134 &1145 \\
+    \end{tabular}
+  \end{center}
+
+\end{tcolorbox}
+
+\subsection*{Results and interpretations}
+\begin{enumerate}
+  \item Based on the observations, what is the height of the cliff (in m)? \vspace{1in}
+  \item Based on the observations, how far away does the cannonball land (in m)? \vspace{1in}
+  \item Use these measurements to determine the muzzle velocity of the cannon (in m/s).  Show
+  your work. Compare this speed to the speed of an object that you are familiar with.
+\end{enumerate}
+
+\vfill {\Large \ding{237} You will need numerical values for the activity on Thursday, please
+  complete this on your own before then if it isn't done in class.}
+
+\end{document}
+

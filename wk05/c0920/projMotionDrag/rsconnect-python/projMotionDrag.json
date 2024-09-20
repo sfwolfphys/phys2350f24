@@ -1,0 +1,12 @@
+{
+    "https://api.shinyapps.io": {
+        "server_url": "https://api.shinyapps.io",
+        "filename": "/home/swolf/Documents/teaching/f2024PHYS2350/lessons/wk05/c0920/projMotionDrag",
+        "app_url": "https://sfwolfphys.shinyapps.io/projectile_motion_with_drag/",
+        "app_id": 12770576,
+        "app_guid": null,
+        "title": "Projectile Motion with Drag",
+        "app_mode": "python-shiny",
+        "app_store_version": 1
+    }
+}

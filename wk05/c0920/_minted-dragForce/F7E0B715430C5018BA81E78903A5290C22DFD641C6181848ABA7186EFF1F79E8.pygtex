@@ -1,0 +1,14 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{turbDrag}\PYG{p}{(}\PYG{n}{c}\PYG{p}{,}\PYG{n}{v}\PYG{p}{):}
+\PYG{+w}{    }\PYG{l+s+sd}{\PYGZsq{}\PYGZsq{}\PYGZsq{} Calculates the turbulent drag force.}
+\PYG{l+s+sd}{    Inputs:}
+\PYG{l+s+sd}{        c = Drag coefficient (positive number)}
+\PYG{l+s+sd}{        v = Velocity vector (two components in x,y directions)}
+\PYG{l+s+sd}{    \PYGZsq{}\PYGZsq{}\PYGZsq{}}
+    \PYG{p}{[}\PYG{n}{vx}\PYG{p}{,} \PYG{n}{vy}\PYG{p}{]} \PYG{o}{=} \PYG{n}{v}
+    \PYG{n}{spd} \PYG{o}{=} \PYG{n}{np}\PYG{o}{.}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{vx}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{o}{+}\PYG{n}{vy}\PYG{o}{**}\PYG{l+m+mi}{2}\PYG{p}{)}
+    \PYG{n}{vhat} \PYG{o}{=} \PYG{n}{v}\PYG{o}{/}\PYG{n}{spd}
+    \PYG{n}{FdragMag} \PYG{o}{=} \PYG{n}{c}\PYG{o}{*}\PYG{n}{spd}\PYG{o}{**}\PYG{l+m+mi}{2}
+    \PYG{n}{Fdrag} \PYG{o}{=} \PYG{o}{\PYGZhy{}} \PYG{n}{FdragMag} \PYG{o}{*} \PYG{n}{vhat}
+    \PYG{k}{return} \PYG{n}{Fdrag}
+\end{Verbatim}

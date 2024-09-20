@@ -1,0 +1,123 @@
+\documentclass[12pt,hidelinks]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cclicenses}
+\usepackage{fancyhdr,lastpage}
+\usepackage[]{hyperref}
+\pagestyle{fancy}
+\usepackage{enumitem}
+\setlist{nosep}
+\setlist[enumerate]{label=(\alph*)}
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+\VerbatimFootnotes
+\usepackage{tikz}
+\usepackage{siunitx}
+
+\renewcommand{\thesection}{\Roman{section}.}
+
+\lhead{TUTORIAL: NEWTON'S LAWS: DEALING WITH FRICTION}
+\rhead{}
+\lfoot{Tutorial 1, Week 5 \\\cc 2024 East Carolina University}
+\cfoot{}
+\rfoot{{\bf Page \thepage \hspace*{0.4em}of \pageref{LastPage}}\\Contact: \url{wolfs15@ecu.edu}}
+
+\newcommand{\checkin}{{\bf \noindent $\Rightarrow$ PAUSE and check with an instructor or another
+  group.}} 
+
+\begin{document}
+
+\section{Applying Newton's laws to a system with friction}
+Suppose that a block slides down a fixed, inclined plane with $\theta=\SI{30}{\deg}$.  You have
+analyzed the material of the block and the plane previously and have found that they have a
+coefficient of kinetic friction of $\mu_k = 0.3$.
+\begin{enumerate}
+  \item In the space below, draw a free-body diagram for the block just after it has been
+  released from rest. You should ensure that your diagram is accurate in the direction that the
+  forces point, but it need not have accurate force magnitudes.  All important angles should be
+  labeled. \vspace{1.5in}
+  \item In the space below, sketch a qualitatively correct graph of velocity vs. time $(v$ vs.\
+  $t)$ for the block.  You should assume that the block is released from rest at $t=0$ and the
+  velocity is positive if it is moving down the ramp.
+  \begin{center}
+    \begin{tikzpicture}[>=stealth]
+      \draw[<->] (-1,0) -- (10,0) node [right]{$t$}; \draw[<->] (0,-1) -- (0,5) node
+      [left]{$v$};
+    \end{tikzpicture}
+  \end{center}
+  \item On the same set of axes above, show the $v$ vs. $t$ graph that \textit{would have been}
+  correct if there was \textit{no} friction.  Make sure that both graphs are consistent with
+  each other and be prepared to defend your rationale to another group/the instructor. \vfill
+\end{enumerate}
+
+\checkin
+\newpage
+
+\noindent
+Now let's see if we can go from qualitative predictions to quantitative predictions.
+\begin{enumerate}[resume]
+  \item How will you orient your coordinate system for this problem? Show how it will be
+  oriented on your free-body diagram on the previous page and defend your choice in the space
+  below. [Hint: You should choose your x and y directions so that the \textit{fewest} number of
+  forces need to be broken down into coordinates.] \vspace{1in}
+  \item Break down your forces into components along each direction of your coordinate system
+  of choice.  Relate the net force to the acceleration in each direction and simplify your
+  result. \vspace{0.1in}
+
+  \rule{0.5in}{0.5pt}-component \hspace{0.35\textwidth} \rule{0.5in}{0.5pt}-component
+  \vspace{2in}
+  \item Simplify the equations above and solve for the acceleration of the block $a$.
+  \vspace{2in}
+  \item Ensure that the previous result matches the $v$ vs.\ $t$ graph that you drew in part
+  (b). Resolve any inconsistencies.
+\end{enumerate}
+\vfill \checkin
+\newpage
+\section{Applying Newton's laws to a system with friction}
+Suppose that a block is at the bottom of a fixed, inclined plane with $\theta=\SI{30}{\deg}$.
+You have analyzed the material of the block and the plane previously and have found that they
+have a coefficient of kinetic friction of $\mu_k = 0.3$. The block is initially given a quick
+shove up the ramp.
+
+\begin{enumerate}
+  \item In the space below, draw a free-body diagram for the block just after it has been
+  shoved up the ramp. \vspace{1.5in}
+  \item In the space below, sketch a qualitatively correct graph of velocity vs. time $(v$ vs.\
+  $t)$ for the block.  You should assume that the block is moving at speed $v_0\neq 0$ after the
+  shove has finished at $t=0$ and the velocity is positive if it is moving up the ramp.
+  \begin{center}
+    \begin{tikzpicture}[>=stealth]
+      \draw[<->] (-1,0) -- (10,0) node [right]{$t$}; \draw[<->] (0,-1) -- (0,5) node
+      [left]{$v$};
+    \end{tikzpicture}
+  \end{center}
+  \item On the same set of axes above, show the $v$ vs. $t$ graph that \textit{would have been}
+  correct if there was \textit{no} friction.  Make sure that both graphs are consistent with
+  each other and be prepared to defend your rationale to another group/the instructor. \vfill
+\end{enumerate}
+
+\checkin
+\newpage
+
+\noindent
+Now let's see if we can go from qualitative predictions to quantitative predictions.
+\begin{enumerate}[resume]
+  \item Can you re-use the coordinate system that you had from part \textrm{I}? Show how it
+  will be oriented on your free-body diagram on the previous page and defend your choice in the
+  space below. \vspace{1in}
+  \item Break down your forces into components along each direction of your coordinate system
+  of choice.  Relate the net force to the acceleration in each direction and simplify your
+  result. \vspace{0.1in}
+
+  \rule{0.5in}{0.5pt}-component \hspace{0.35\textwidth} \rule{0.5in}{0.5pt}-component
+  \vspace{2in}
+  \item Simplify the equations above and solve for the acceleration of the block $a$.
+  \vspace{2in}
+  \item Ensure that the previous result matches the $v$ vs.\ $t$ graph that you drew in part
+  (b). Resolve any inconsistencies.
+\end{enumerate}
+\vfill \checkin
+
+\end{document}

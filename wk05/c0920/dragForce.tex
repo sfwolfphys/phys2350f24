@@ -1,0 +1,124 @@
+\documentclass[12pt,hidelinks]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{cclicenses}
+\usepackage{fancyhdr,lastpage}
+\usepackage[]{hyperref}
+\pagestyle{fancy}
+\usepackage{enumitem}
+\setlist{nosep}
+\setlist[enumerate]{label=(\alph*)}
+\usepackage{tcolorbox}
+\usepackage{fancyvrb}
+\VerbatimFootnotes
+\usepackage{tikz}
+\usepackage[per-mode=fraction]{siunitx}
+
+\usepackage{minted}
+
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thesubsection}{\thesection\Alph{subsection}}
+
+\lhead{TUTORIAL: NEWTON'S LAWS: DEALING WITH AIR RESISTANCE IN 2D}
+\rhead{}
+\lfoot{Tutorial 4, Week 5 \\\cc 2024 East Carolina University}
+\cfoot{}
+\rfoot{{\bf Page \thepage \hspace*{0.4em}of \pageref{LastPage}}\\Contact: \url{wolfs15@ecu.edu}}
+
+\newcommand{\checkin}{{\bf \noindent $\Rightarrow$ PAUSE and check with an instructor or another
+  group.}} 
+
+\begin{document}
+
+\section{Characterizing Air resistance}
+
+Previously, we noted that air resistance had several forms. It could be\ldots
+\begin{enumerate}[label=(\roman*)]
+  \item proportional to the speed of the object (with magnitude $c_1\left|v\right|$),
+  \item proportional to the square of the speed (with magnitude $c_2v^2$), or
+  \item a combination of the above two terms (linear and quadratic).
+\end{enumerate}
+where $c_1$ and $c_2$ are positive constants. Both of these velocity terms are in the
+\textit{opposite} direction as the velocity.  Practically speaking, we operate under a few
+rules of thumb to determine which terms are most important.
+\begin{itemize}
+  \item Small, slow objects tend to have $c_1 \neq 0$ and $c_2 \approx 0$
+  \item Large, fast objects tend to have $c_1 \approx 0$ and $c_2 \neq 0$
+\end{itemize}
+
+Which terms do you think will apply to the motion of a cannonball fired from a cannon?
+\vspace{0.5in}
+
+\section{Calculating Air resistance in 2D}
+
+Suppose you have an object moving with a velocity
+$\vec{v} = (\SI{30}{\meter\per\second}, \SI{40}{\meter\per\second})$ and the drag coefficients
+$c_1 = \SI{0.0001}{\kilo\gram\per\second}$ and $c_2 = \SI{0.01}{\kilo\gram\per\meter}$. These
+coefficients are consistent with large objects moving through air.
+
+\begin{enumerate}
+  \item Calculate the magnitude of the air resistance force on the object noted above. Consider
+  the linear and quadratic terms separately. Is it appropriate to ignore either term?
+  \vspace{1in}
+  \item Calculate the vector $\hat{v}$ for the velocity vector $\vec{v}$ given above. Does this
+  vector have units? What is the length of this vector? What direction is this vector pointing
+  in compared to the velocity? What direction is this vector pointing in compared to the air
+  resistance?
+  \[
+    \hat{v} = \frac{\vec{v}}{\left|\vec{v}\right|}
+  \]
+  \vspace{0.5in}
+  \item Calculate the air resistance force in component form $(F_x,F_y)$. You can ignore any
+  contributions to this force that are small. \vspace{1.5in}
+  \item If you know the velocity components $(v_x,v_y)$, write an algebraic expression allowing
+  you to find the air resistance force assuming $c_1=0$. Double check your expression by
+  ensuring that you get the same numerical answer as you did for part (c). [Question: Why did I
+  make you calculate $\hat{v}$ in part (b)?] \vspace{1in}
+\end{enumerate}
+
+\checkin
+
+\section{Projectile motion with drag}
+
+Let's go back to the Kenyan Coast and use the data from Wednesday. To this data, we'll include
+the following:
+\begin{itemize}
+  \item The mass of a cannonball is \SI{1.0}{\kilo\gram}.
+  \item The drag coefficients are $c_1 = \SI{3.3e-5}{\kilo\gram\per\second}$ and $c_2
+  = \SI{2.9e-3}{\kilo\gram\per\meter}$
+\end{itemize}
+
+I have created an app which allows you to generate the motion for the cannonball with the
+ability to tune parameters to fit the motion that we are studying.  It is linked to the Canvas
+page for today's assignment.
+
+In my code, I defined the following function to calculate the turbulent (quadratic) drag
+force. In the space to the right, describe what is being done on each line (beginning with line
+7). Convince yourself that this is correctly calculating the drag force.
+\begin{minted}[linenos, numbersep=5pt]{python}
+def turbDrag(c,v):
+    ''' Calculates the turbulent drag force.
+    Inputs:
+        c = Drag coefficient (positive number)
+        v = Velocity vector (two components in x,y directions)
+    '''
+    [vx, vy] = v
+    spd = np.sqrt(vx**2+vy**2)
+    vhat = v/spd
+    FdragMag = c*spd**2
+    Fdrag = - FdragMag * vhat
+    return Fdrag
+\end{minted}
+
+\subsection{Final task}
+\begin{enumerate}
+  \item Find the launch angle $\theta$ which gives the largest range for the cannon.
+  \item Play with the parameters in the app and figure out something interesting, then write
+  out what that is and give the parameters that you used to generate that knowledge. (This
+  should be a paragraph or so. It would be great if you got screenshots and put them in a
+  document that you uploaded to Canvas with this assignment).
+\end{enumerate}
+
+\end{document}
